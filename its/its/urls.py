@@ -19,4 +19,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^transport/',"transport.views.transport_home"),
+   # url(r'^transport/',include("transport.urls",namespace="transport")),
 ]
