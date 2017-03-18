@@ -1,6 +1,6 @@
 from django.shortcuts import render,render_to_response,RequestContext
 from django.http import HttpResponse,Http404,HttpResponseRedirect
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -24,7 +24,13 @@ def register_page(request):
     variables = RequestContext(request, {'form': form})
     return render_to_response('register.html', variables)
 
+def logout_page(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
 @login_required(login_url="login/")
 def home(request):
     return render(request,"home.html")
+
+
 
