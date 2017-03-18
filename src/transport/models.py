@@ -9,3 +9,5 @@ class user_details(models.Model):
 
     def __unicode__(self):
         return self.username
+
+#class Profile

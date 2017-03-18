@@ -1,28 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response,RequestContext
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 from .models import user_details
-from .form import  LoginForm
+from .form import  LoginForm,RegistrationForm
 # Create your views here.
-def login(request,template_name):
-    # if request.method=='post':
-    #     session.pop('user', None)
-    username = request.POST.get('username','admin')
-    password = request.POST.get('password','admin')
-    user = authenticate(username=username, password=password)
-    form = LoginForm(request.POST)
-    if form.is_valid():
-        messages.success(request, "Successsfully Created")
-    if user is None:
-        raise Http404
-    else :
-        if user.is_authenticated():
-            return HttpResponseRedirect('/home')
+#def login(request,template_name):
 
-    return render(request, "login.html")
+def register_page(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = User.objects.create_user(username=form.cleaned_data['username'],
+                                            password=form.cleaned_data['password1'],
+                                            email=form.cleaned_data['email'])
+            return HttpResponseRedirect('/')
+        else:
+            return render(request,'register.html',{'form':form})
+    form = RegistrationForm()
+    variables = RequestContext(request, {'form': form})
+    return render_to_response('register.html', variables)
 
 @login_required(login_url="login/")
 def home(request):
