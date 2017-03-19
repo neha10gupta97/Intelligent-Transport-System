@@ -17,7 +17,7 @@
 	<div class="row">
 		<div class="col-md-8" id="leftpart">
 			<div class="customDiv">
-				<img src="static/img/newLogoSmall.png" class="img-rounded">
+				<img src="{% static 'img/newLogoSmall.png' %}" class="img-rounded">
 				<br>
 				<h1>Transport System</h1>
 				<br>
@@ -60,7 +60,7 @@
   					</div>
   					<div class="form-group">
     					<div class="col-sm-offset-2 col-sm-10">
-    					  <button type="submit" class="btn btn-danger" id="button1">Sign Up</button>
+							<a href="{% url 'register'%}"><button type="submit" class="btn btn-danger" id="button1">Sign Up</button></a>
     					</div>
   					</div>
 				</form>
@@ -70,6 +70,6 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
-    <script src="static/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>

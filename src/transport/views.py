@@ -17,7 +17,7 @@ def register_page(request):
             user = User.objects.create_user(username=form.cleaned_data['username'],
                                             password=form.cleaned_data['password1'],
                                             email=form.cleaned_data['email'])
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/home')
         else:
             return render(request,'register.html',{'form':form})
     form = RegistrationForm()
@@ -26,9 +26,9 @@ def register_page(request):
 
 def logout_page(request):
     logout(request)
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/login')
 
-@login_required(login_url="login/")
+@login_required
 def home(request):
     return render(request,"home.html")
 
