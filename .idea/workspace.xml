@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1ca540a-94e3-4049-910a-8cbc648cfca4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/db.sqlite3" afterPath="$PROJECT_DIR$/src/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/its/settings.py" afterPath="$PROJECT_DIR$/src/its/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/templates/login.html" afterPath="$PROJECT_DIR$/src/templates/login.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,8 +88,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="60" column="136" lean-forward="false" selection-start-line="60" selection-start-column="136" selection-end-line="60" selection-end-column="136" />
+            <state relative-caret-position="345">
+              <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -837,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="60" column="136" lean-forward="false" selection-start-line="60" selection-start-column="136" selection-end-line="60" selection-end-column="136" />
+        <state relative-caret-position="345">
+          <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding />
         </state>
       </provider>
