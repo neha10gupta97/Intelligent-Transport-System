@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +48,8 @@
 								class="glyphicon glyphicon-user" style="font-size:32px"></span></label>
     					<div class="col-sm-8">
       						<!--<input type="" class="form-control" id="inputEmail3" placeholder="Username or email">-->
-							{{ form.username }}
+							{% render_field form.username type="input" placeholder="Username" class+="form-control" id="inputEmail3" %}
+							<!--{{ form.username|attr:"id:inputEmail3"|attr:"placeholder:Username" }}-->
     					</div>
   					</div>
 
@@ -56,7 +58,8 @@
 								class="glyphicon glyphicon-pencil" style="font-size:32px"></span></label>
     					<div class="col-sm-8">
       						<!--<input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
-							{{ form.password }}
+							{% render_field form.password type="password" placeholder="Password" class+="form-control" id="inputPassword3" %}
+							<!--{{ form.password|attr:"id:inputPassword3"|attr:"placeholder:Password" }}-->
     					</div>
   					</div>
 
