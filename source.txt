@@ -1,0 +1,10 @@
+//verification with gmail
+https://www.webforefront.com/django/setupdjangousercreation.html
+https://github.com/mfogel/django-simple-email-confirmation/blob/develop/simple_email_confirmation/models.py
+http://stackoverflow.com/questions/24935271/django-custom-user-email-account-verification
+https://hellowebapp.com/news/tutorial-setting-up-a-contact-form-with-django/	
+https://github.com/macdhuibh/django-registration-templates
+
+
+//login with gmail
+https://simpleisbetterthancomplex.com/tutorial/2016/10/24/how-to-add-social-login-to-django.html

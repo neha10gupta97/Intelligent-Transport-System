@@ -2,6 +2,7 @@ from django.shortcuts import render,render_to_response,RequestContext
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth import authenticate,logout
 from django.contrib import messages
+from django.core.mail import EmailMessage
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
@@ -17,7 +18,7 @@ def register_page(request):
             user = User.objects.create_user(username=form.cleaned_data['username'],
                                             password=form.cleaned_data['password1'],
                                             email=form.cleaned_data['email'])
-            return HttpResponseRedirect('/home')
+            return HttpResponseRedirect('/login')
         else:
             return render(request,'register.html',{'form':form})
     form = RegistrationForm()
@@ -28,9 +29,12 @@ def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/login')
 
-@login_required
+
 def home(request):
-    return render(request,"home.html")
+    if not request.user.is_authenticated():
+        return  HttpResponseRedirect('/login')
+    else:
+        return render(request,"home.html")
 
 
 
