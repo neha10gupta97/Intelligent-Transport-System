@@ -20,6 +20,7 @@ def register_page(request):
                                             email=form.cleaned_data['email'])
             return HttpResponseRedirect('/login')
         else:
+            raise form.ValidationError('fail')
             return render(request,'register.html',{'form':form})
     form = RegistrationForm()
     variables = RequestContext(request, {'form': form})
